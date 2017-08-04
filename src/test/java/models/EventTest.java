@@ -48,6 +48,6 @@ public class EventTest {
     @Test
     public void addCost_getsPriceOfAllOptions_75() {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
-        assertEquals(100, testEvent.addCost());
+        assertEquals(75, testEvent.addCost());
     }
 }
