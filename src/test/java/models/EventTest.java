@@ -54,8 +54,9 @@ public class EventTest {
     @Test
     public void addCost_getsPriceOfAllOptions_100() {
         Event testEvent = new Event(5, "Snacks", "PBR", "Cousin Vinny", 0);
-        assertEquals(75, testEvent.addCost());
+        assertEquals(100, testEvent.addCost());
     }
+
 
 
 }
