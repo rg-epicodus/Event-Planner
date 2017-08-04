@@ -66,18 +66,18 @@ public class EventTest {
     @Test
     public void addCost_getsPriceOfAllOptions_956500() {
         Event testEvent = new Event(150, "Jamie Oliver Caters", "Top Shelf Open Bar", "Adele", 0, "none");
-        assertEquals(956500, testEvent.addCost());
+        assertEquals(955750, testEvent.addCost());
     }
 
     @Test
-    public void couponCode_addDiscountOf50Dollars_50() {
+    public void addCost_addDiscountOf50Dollars_50() {
         Event testEvent = new Event(150, "Snacks", "Water", "Cousin Vinny", 0, "50Off");
         assertEquals(2200, testEvent.addCost());
 
     }
 
     @Test
-    public void couponCode_addFreeDJ_750() {
+    public void addCost_addFreeDJ_750() {
         Event testEvent = new Event(150, "Snacks", "Full Bar", "DJ RC", 0, "FREEDJ");
         assertEquals(6000, testEvent.addCost());
     }
