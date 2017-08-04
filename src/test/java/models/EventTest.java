@@ -42,6 +42,6 @@ public class EventTest {
     @Test
     public void getPrice_getsTotalPrice_0() {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
-        assertEquals(1000, testEvent.getPrice());
+        assertEquals(0, testEvent.getPrice());
     }
 }
