@@ -11,13 +11,15 @@ public class Event {
     private String typeDrinks;
     private String typeEntertainment;
     private int totalPrice;
+    private String typeCoupon;
 
-    public Event(int guests, String food, String drinks, String entertainment, int price) {
+    public Event(int guests, String food, String drinks, String entertainment, int price, String coupon) {
         numGuests = guests;
         typeFood = food;
         typeDrinks = drinks;
         typeEntertainment = entertainment;
         totalPrice = price;
+        typeCoupon = coupon;
     }
 
     public int getGuests() {
@@ -40,12 +42,17 @@ public class Event {
         return totalPrice;
     }
 
+    public String couponCode(){
+        return typeCoupon;
+    }
     String[] foodChoiceArray = {"Snacks", "Appetizers", "Sandwiches", "Light Dinner", "Three Course Dinner", "Jamie Oliver Caters"};
     int[] foodPriceArray ={5, 15, 20, 55, 125, 450};
     String[] drinkChoiceArray = {"Water", "PBR", "Champagne", "Full Bar", "Open Bar", "Top Shelf Open Bar"};
     int[] drinkPriceArray = {0, 5, 15, 25, 50, 250};
     String[] entertainmentChoiceArray = {"Cousin Vinny", "Bobo the Sad Clown", "DJ RC", "Live Band", "Weezer", "Adele"};
     int[] entertainmentPriceArray = {0, 250, 750, 2500, 125000, 850000};
+    String[] couponCodeArray = {"50Off", "FREEDJ"};
+    int[] couponDiscountArray = {50, 750};
 
 
     public int addCost() {
@@ -55,9 +62,7 @@ public class Event {
             }
         }
         for (int i=0; i<drinkChoiceArray.length; i++) {
-            if ((Arrays.asList(drinkChoiceArray).contains("Full Bar")) & (numGuests>=150)) {
-                totalPrice+=(drinkPriceArray[i]*numGuests)-750;
-            } else if (typeDrinks.equals(drinkChoiceArray[i])) {
+            if (typeDrinks.equals(drinkChoiceArray[i])) {
                 totalPrice+=(drinkPriceArray[i]*numGuests);
             }
         }
@@ -65,6 +70,17 @@ public class Event {
             if(typeEntertainment.equals(entertainmentChoiceArray[i])) {
                 totalPrice+=(entertainmentPriceArray[i]);
             }
+        }
+//        for (int i=0; i<drinkChoiceArray.length; i++) {
+//            if ((Arrays.asList(drinkChoiceArray).contains("Full Bar")) & (numGuests>=150)) {
+//                totalPrice+=(drinkPriceArray[i]*numGuests);
+//            } else if (typeDrinks.equals(drinkChoiceArray[i])) {
+//                totalPrice+=(drinkPriceArray[i]*numGuests);
+//            }
+//        }
+
+        if(typeCoupon.equals(couponCodeArray[0])) {
+            totalPrice-=50;
         }
 
         return totalPrice;
