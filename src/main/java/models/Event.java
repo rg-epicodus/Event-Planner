@@ -33,6 +33,10 @@ public class Event {
     public String getEntertainment() {
         return typeEntertainment;
     }
+
+    public int getPrice() {
+        return totalPrice;
+    }
 }
 
 
