@@ -36,7 +36,7 @@ public class EventTest {
     @Test
     public void getEntertainment_getsEntertainmentType_Cousin_Vinny() {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
-        assertEquals("juggler", testEvent.getEntertainment());
+        assertEquals("Cousin Vinny", testEvent.getEntertainment());
     }
 
 }
