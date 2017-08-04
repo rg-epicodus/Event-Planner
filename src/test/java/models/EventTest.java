@@ -30,7 +30,7 @@ public class EventTest {
     @Test
     public void getDrinks_getsDrinkType_Water() {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
-        assertEquals("magma", testEvent.getDrinks());
+        assertEquals("Water", testEvent.getDrinks());
     }
 
 
