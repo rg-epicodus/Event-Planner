@@ -72,7 +72,7 @@ public class EventTest {
     @Test
     public void couponCode_addDiscountOf50Dollars_50() {
         Event testEvent = new Event(150, "Snacks", "Water", "Cousin Vinny", 0, "50Off");
-        assertEquals(2250, testEvent.addCost());
+        assertEquals(2200, testEvent.addCost());
 
     }
 
