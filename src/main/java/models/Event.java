@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Arrays;
+
 /**
  * Created by Guest on 8/4/7.
  */
@@ -53,8 +55,8 @@ public class Event {
             }
         }
         for (int i=0; i<drinkChoiceArray.length; i++) {
-            if((typeDrinks.equals(drinkChoiceArray[4])) && (numGuests>=150)) {
-                totalPrice+=((drinkPriceArray[i]*numGuests)-450);
+            if ((Arrays.asList(drinkChoiceArray).contains("Full Bar")) & (numGuests>=150)) {
+                totalPrice+=(drinkPriceArray[i]*numGuests)-750;
             } else if (typeDrinks.equals(drinkChoiceArray[i])) {
                 totalPrice+=(drinkPriceArray[i]*numGuests);
             }
