@@ -38,12 +38,12 @@ public class Event {
         return totalPrice;
     }
 
-    String[] foodChoiceArray = {"Snacks", "Appetizers", "Sandwiches"};
-    int[] foodPriceArray ={5, 15, 20};
-    String[] drinkChoiceArray = {"Water", "PBR", "Champagne", "Full Bar", "Open Bar"};
-    int[] drinkPriceArray = {0, 5, 15, 25, 50};
-    String[] entertainmentChoiceArray = {"Cousin Vinny", "Bobo the Sad Clown"};
-    int[] entertainmentPriceArray = {0, 250};
+    String[] foodChoiceArray = {"Snacks", "Appetizers", "Sandwiches", "Light Dinner", "Three Course Dinner", "Jamie Oliver Caters"};
+    int[] foodPriceArray ={5, 15, 20, 55, 125, 450};
+    String[] drinkChoiceArray = {"Water", "PBR", "Champagne", "Full Bar", "Open Bar", "Top Shelf Open Bar"};
+    int[] drinkPriceArray = {0, 5, 15, 25, 50, 250};
+    String[] entertainmentChoiceArray = {"Cousin Vinny", "Bobo the Sad Clown", "DJ RC", "Live Band", "Weezer", "Adele"};
+    int[] entertainmentPriceArray = {0, 250, 750, 2500, 125000, 850000};
 
 
     public int addCost() {
@@ -52,7 +52,6 @@ public class Event {
                 totalPrice+=((foodPriceArray[i]*numGuests)+numGuests*10);
             }
         }
-
         for (int i=0; i<drinkChoiceArray.length; i++) {
             if(typeDrinks.equals(drinkChoiceArray[i])) {
                 totalPrice+=(drinkPriceArray[i]*numGuests);
