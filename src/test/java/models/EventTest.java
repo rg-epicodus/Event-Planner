@@ -1,5 +1,7 @@
 package models;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,6 +9,9 @@ import static org.junit.Assert.*;
  */
 public class EventTest {
 
-
-
+    @Test
+    public void newEvent_instantiatescorrectly_true() {
+        Event testEvent = new Event();
+        assertEquals(false, testEvent instanceof Event);
+    }
 }
