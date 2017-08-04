@@ -25,6 +25,10 @@ public class Event {
     public String getFood() {
         return typeFood;
     }
+
+    public String getDrinks() {
+        return typeDrinks;
+    }
 }
 
 
