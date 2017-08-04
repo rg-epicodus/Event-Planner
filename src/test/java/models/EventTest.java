@@ -60,7 +60,7 @@ public class EventTest {
     @Test
     public void addCost_getsPriceOfAllOptions_350() {
         Event testEvent = new Event(5, "Snacks", "PBR", "Bobo the Sad Clown", 0);
-        assertEquals(100, testEvent.addCost());
+        assertEquals(350, testEvent.addCost());
     }
 
 
