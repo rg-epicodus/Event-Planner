@@ -76,6 +76,11 @@ public class EventTest {
 
     }
 
+    @Test
+    public void couponCode_addFreeDJ_750() {
+        Event testEvent = new Event(150, "Snacks", "Full Bar", "DJ RC", 0, "FREEDJ");
+        assertEquals(6000, testEvent.addCost());
+    }
 
 
 

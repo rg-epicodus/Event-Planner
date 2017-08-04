@@ -56,6 +56,7 @@ public class Event {
 
 
     public int addCost() {
+        String guestNumber = String.valueOf(numGuests);
         for (int i=0; i<foodChoiceArray.length; i++) {
             if(typeFood.equals(foodChoiceArray[i])) {
                 totalPrice+=((foodPriceArray[i]*numGuests)+numGuests*10);
@@ -81,8 +82,8 @@ public class Event {
 
         if(typeCoupon.equals(couponCodeArray[0])) {
             totalPrice-=50;
-        }
-
+        } else if(typeCoupon.equals(couponCodeArray[1].equals(guestNumber = "150")))
+            totalPrice-=750;
         return totalPrice;
     }
 
