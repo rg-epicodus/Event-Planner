@@ -6,44 +6,44 @@ import java.util.Arrays;
  * Created by Guest on 8/4/7.
  */
 public class Event {
-    private int numGuests;
-    private String typeFood;
-    private String typeDrinks;
-    private String typeEntertainment;
-    private int totalPrice;
-    private String typeCoupon;
+    private int guests;
+    private String food;
+    private String drinks;
+    private String entertainment;
+    private int price;
+    private String coupon;
 
     public Event(int guests, String food, String drinks, String entertainment, int price, String coupon) {
-        numGuests = guests;
-        typeFood = food;
-        typeDrinks = drinks;
-        typeEntertainment = entertainment;
-        totalPrice = price;
-        typeCoupon = coupon;
+        this.guests = guests;
+        this.food = food;
+        this.drinks = drinks;
+        this.entertainment = entertainment;
+        this.price = price;
+        this.coupon = coupon;
     }
 
     public int getGuests() {
-        return numGuests;
+        return guests;
     }
 
     public String getFood() {
-        return typeFood;
+        return food;
     }
 
     public String getDrinks() {
-        return typeDrinks;
+        return drinks;
     }
 
     public String getEntertainment() {
-        return typeEntertainment;
+        return entertainment;
     }
 
     public int getPrice() {
-        return totalPrice;
+        return price;
     }
 
     public String couponCode(){
-        return typeCoupon;
+        return coupon;
     }
     String[] foodChoiceArray = {"Snacks", "Appetizers", "Sandwiches", "Light Dinner", "Three Course Dinner", "Jamie Oliver Caters"};
     int[] foodPriceArray ={5, 15, 20, 55, 125, 450};
@@ -52,40 +52,30 @@ public class Event {
     String[] entertainmentChoiceArray = {"Cousin Vinny", "Bobo the Sad Clown", "DJ RC", "Live Band", "Weezer", "Adele"};
     int[] entertainmentPriceArray = {0, 250, 750, 2500, 125000, 850000};
     String[] couponCodeArray = {"50Off", "FREEDJ"};
-    int[] couponDiscountArray = {50, 750};
-
 
     public int addCost() {
         for (int i = 0; i < foodChoiceArray.length; i++) {
-            if (typeFood.equals(foodChoiceArray[i])) {
-                totalPrice += ((foodPriceArray[i] * numGuests) + numGuests * 10);
+            if (food.equals(foodChoiceArray[i])) {
+                price += ((foodPriceArray[i] * guests) + guests * 10);
             }
         }
         for (int i = 0; i < drinkChoiceArray.length; i++) {
-            if (typeDrinks.equals(drinkChoiceArray[i])) {
-                totalPrice += (drinkPriceArray[i] * numGuests);
+            if (drinks.equals(drinkChoiceArray[i])) {
+                price += (drinkPriceArray[i] * guests);
             }
         }
         for (int i = 0; i < entertainmentChoiceArray.length; i++) {
-            if (typeEntertainment.equals(entertainmentChoiceArray[i])) {
-                totalPrice += (entertainmentPriceArray[i]);
+            if (entertainment.equals(entertainmentChoiceArray[i])) {
+                price += (entertainmentPriceArray[i]);
             }
         }
-//        for (int i=0; i<drinkChoiceArray.length; i++) {
-//            if ((Arrays.asList(drinkChoiceArray).contains("Full Bar")) & (numGuests>=150)) {
-//                totalPrice+=(drinkPriceArray[i]*numGuests);
-//            } else if (typeDrinks.equals(drinkChoiceArray[i])) {
-//                totalPrice+=(drinkPriceArray[i]*numGuests);
-//            }
-//        }
 
-        String guestNumber = Integer.toString(numGuests);
-        if (typeCoupon.equals(couponCodeArray[0])) {
-            totalPrice -= 50;
-        } else if (numGuests >= 150) {
-            totalPrice -= 750;
+        if (coupon.equals(couponCodeArray[0])) {
+            price -= 50;
+        } else if (guests >= 150) {
+            price -= 750;
         }
-        return totalPrice;
+        return price;
     }
 
 }
