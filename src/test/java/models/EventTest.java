@@ -69,4 +69,11 @@ public class EventTest {
         assertEquals(956500, testEvent.addCost());
     }
 
+    @Test
+    public void couponCodeFreeDJ_freeDJIfGuests150OrMoreAndFullBarSelected_750Discount() {
+        Event testEvent = new Event(150, "Snacks", "Full Bar", "Cousin Vinny", 0);
+        assertEquals(956500, testEvent.addCost());
+    }
+
+
 }

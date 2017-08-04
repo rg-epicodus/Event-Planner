@@ -53,7 +53,9 @@ public class Event {
             }
         }
         for (int i=0; i<drinkChoiceArray.length; i++) {
-            if(typeDrinks.equals(drinkChoiceArray[i])) {
+            if((typeDrinks.equals(drinkChoiceArray[4])) && (numGuests>=150)) {
+                totalPrice+=((drinkPriceArray[i]*numGuests)-450);
+            } else if (typeDrinks.equals(drinkChoiceArray[i])) {
                 totalPrice+=(drinkPriceArray[i]*numGuests);
             }
         }
