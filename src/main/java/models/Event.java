@@ -58,6 +58,11 @@ public class Event {
                 totalPrice+=(drinkPriceArray[i]*numGuests);
             }
         }
+        for (int i=0; i<entertainmentChoiceArray.length; i++) {
+            if(typeEntertainment.equals(entertainmentChoiceArray[i])) {
+                totalPrice+=(entertainmentPriceArray[i]);
+            }
+        }
 
         return totalPrice;
     }
