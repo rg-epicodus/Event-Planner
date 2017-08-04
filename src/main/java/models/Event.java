@@ -21,6 +21,10 @@ public class Event {
     public int getGuests() {
         return numGuests;
     }
+
+    public String getFood() {
+        return typeFood;
+    }
 }
 
 

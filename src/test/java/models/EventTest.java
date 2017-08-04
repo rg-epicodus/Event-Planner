@@ -21,5 +21,11 @@ public class EventTest {
         assertEquals(5, testEvent.getGuests());
     }
 
+    @Test
+    public void getFood_getsFoodType_Snacks() {
+        Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
+        assertEquals("bread", testEvent.getFood());
+    }
+
 
 }
