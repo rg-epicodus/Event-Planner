@@ -44,4 +44,10 @@ public class EventTest {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
         assertEquals(0, testEvent.getPrice());
     }
+
+    @Test
+    public void addCost_getsPriceOfAllOptions_75() {
+        Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
+        assertEquals(100, testEvent.addCost());
+    }
 }

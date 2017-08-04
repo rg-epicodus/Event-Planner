@@ -37,6 +37,24 @@ public class Event {
     public int getPrice() {
         return totalPrice;
     }
+
+    String[] foodChoiceArray = {"Snacks"};
+    int[] foodPriceArray ={5};
+
+
+
+
+    public int addCost() {
+        for (int i=0; i<foodChoiceArray.length; i++) {
+            if(typeFood.equals(foodChoiceArray[i])) {
+                totalPrice+=((foodPriceArray[i]*numGuests)+numGuests*10);
+            }
+        }
+        return totalPrice;
+    }
+
+
+
 }
 
 
