@@ -66,7 +66,7 @@ public class EventTest {
     @Test
     public void addCost_getsPriceOfAllOptions_956500() {
         Event testEvent = new Event(150, "Jamie Oliver Caters", "Top Shelf Open Bar", "Adele", 0);
-        assertEquals(350, testEvent.addCost());
+        assertEquals(956500, testEvent.addCost());
     }
 
 }
