@@ -18,7 +18,7 @@ public class EventTest {
     @Test
     public void getGuests_getsGuestCount_5() {
         Event testEvent = new Event(5, "Snacks", "Water", "Cousin Vinny", 0);
-        assertEquals(1, testEvent.getGuests());
+        assertEquals(5, testEvent.getGuests());
     }
 
 
