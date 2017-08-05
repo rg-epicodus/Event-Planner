@@ -45,22 +45,6 @@ public class Event {
         return totalPrice;
     }
 
-    public String[] getFoodChoiceArray(){
-        return foodChoiceArray;
-    }
-
-    public String[] getDrinksChoiceArray(){
-        return drinkChoiceArray;
-    }
-
-    public String[] getEntertainmentChoiceArray(){
-        return entertainmentChoiceArray;
-    }
-
-    public String[] getCouponChoiceArray(){
-        return couponCodeArray;
-    }
-
     // Arrays of choices for food/drink/entertainment/coupon
     private String[] foodChoiceArray = {"Snacks", "Appetizers", "Sandwiches", "Light Dinner", "Three Course Dinner", "Jamie Oliver Caters"};
     private int[] foodPriceArray ={5, 15, 20, 55, 125, 450};
