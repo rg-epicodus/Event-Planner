@@ -23,7 +23,7 @@ public class App {
                         System.out.println("***********************************************************");
                         System.out.println("Please enter how many guests will be attending.");
                         int guests = Integer.parseInt(bufferedReader.readLine());
-                        if (guests > 250 && guests < 25){
+                        if (guests > 250 || guests < 25){
                             System.out.println("***********************************************************");
                             System.out.println("Dreadfully sorry, we have a maximum occupancy of 250 Guests");
                             System.out.println("as well as a minimum occupancy of 25 Guests.");
@@ -31,7 +31,7 @@ public class App {
                             System.out.println("***********************************************************");
                             break;
 
-                        } else if(guests <= 250 && guests >= 25) {
+                        } else if(guests <= 250 & guests >= 25) {
                             System.out.println("***********************************************************");
                             System.out.println("Please enter what food selection you would like.");
                             System.out.println("The choices are Snacks, Appetizers, Sandwiches, Light Dinner, Three Course Dinner, Jamie Oliver Caters");
@@ -47,20 +47,6 @@ public class App {
                             System.out.println("***********************************************************");
                             System.out.println("***********************************************************");
                             Event newEvent = new Event(guests, food, drinks, entertainment);
-//                        if (!newEvent.partOfArray(food, newEvent.getFoodChoiceArray())) {
-//                            System.out.println("We didn't recognize your food choice! We hope to see you again!");
-//                            break;
-//                        }
-//                        if (!newEvent.partOfArray(drinks, newEvent.getDrinksChoiceArray())) {
-//                            System.out.println("We didn't recognize your drinks choice! We hope to see you again!");
-//                            break;
-//                        }
-//                        if (!newEvent.partOfArray(entertainment, newEvent.getEntertainmentChoiceArray())) {
-//                            System.out.println("We didn't recognize your entertainment choice! We hope to see you again!");
-//                            break;
-//                        }
-
-
                             System.out.println("Your itemized Event Plan Receipt includes the following charges:");
                             System.out.println("Guests total: $" + newEvent.createGuestCost() + " for " + newEvent.getGuests()+ " Guests");
                             System.out.println("Your Meals are: $" + newEvent.createFoodCost() + " for you food choice: " + newEvent.getFood());
@@ -68,6 +54,11 @@ public class App {
                             System.out.println("Your Entertainment will be: $" + newEvent.createEntertainmentCost()  + " for the performer: " + newEvent.getEntertainment());
                             System.out.println("The total cost of the event is: $" + newEvent.addCost());
                             System.out.println("***********************************************************");
+                            System.out.println("Please enter your coupon code now, if you have one (50Off): ");
+                            String couponCode = bufferedReader.readLine();
+                            if (couponCode.equalsIgnoreCase("50Off")) {
+                                System.out.println("The total cost of the event is now: $" + newEvent.createCouponDiscount(couponCode));
+                            }
                             System.out.println("***********************************************************");
                             System.out.println("Thank you for your reservation");
                             System.out.println("***********************************************************");

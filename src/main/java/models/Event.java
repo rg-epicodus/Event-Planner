@@ -12,7 +12,7 @@ public class Event {
     private String typeDrinks;
     private String typeEntertainment;
     private int totalPrice;
-    private String typeCoupon;
+    private int createCouponDiscount;
     private int foodCost;
     private int guestCost;
     private int drinkCost;
@@ -23,7 +23,6 @@ public class Event {
         typeFood = food;
         typeDrinks = drinks;
         typeEntertainment = entertainment;
-//        typeCoupon = coupon;
     }
     // Getter methods
     public int getGuests() {
@@ -58,8 +57,8 @@ public class Event {
         return entertainmentChoiceArray;
     }
 
-    public String couponCode(){
-        return typeCoupon;
+    public String[] getCouponChoiceArray(){
+        return couponCodeArray;
     }
 
     // Arrays of choices for food/drink/entertainment/coupon
@@ -69,12 +68,24 @@ public class Event {
     private int[] drinkPriceArray = {0, 5, 15, 25, 50, 250};
     private String[] entertainmentChoiceArray = {"Cousin Vinny", "Bobo the Sad Clown", "DJ RC", "Live Band", "Weezer", "Adele"};
     private int[] entertainmentPriceArray = {0, 250, 750, 2500, 125000, 850000};
-//    private String[] couponCodeArray = {"50Off", "FREEDJ"};
+    private String[] couponCodeArray = {"50Off", "FREEDJ"};
+    private int[] couponDiscountArray = {50, 750};
 
     // Cost Calculations
         public int addCost() {
             totalPrice = (numGuests*10)+createFoodCost()+createDrinkCost()+createEntertainmentCost();
             return totalPrice;
+        }
+
+        public int createCouponDiscount(String coupon) {
+            for (String couponCode : couponCodeArray) {
+                if (coupon.equalsIgnoreCase(couponCode)) {
+                    createCouponDiscount = totalPrice - 50;
+                } else if (coupon.equalsIgnoreCase(couponCode)) {
+                    createCouponDiscount = totalPrice - 50;
+                }
+            }
+            return createCouponDiscount;
         }
 
         public int createGuestCost() {
@@ -109,16 +120,7 @@ public class Event {
             return entertainmentCost;
         }
 
-        public boolean partOfArray(String input,String[] list){
-            return (Arrays.asList(list).contains(input));
-        }
 
-//        if (coupon.equals(couponCodeArray[0])) {
-//            price -= 50;
-//        } else if (guests >= 150) {
-//            price -= 750;
-//        }
-//        return price;
 
 }
 

@@ -69,20 +69,6 @@ public class EventTest {
         assertEquals(956500, testEvent.addCost());
     }
 
-//    @Test
-//    public void addCost_addDiscountOf50Dollars_50() {
-//        Event testEvent = new Event(150, "Snacks", "Water", "Cousin Vinny");
-//        assertEquals(2200, testEvent.addCost());
-//
-//    }
-//
-//    @Test
-//    public void addCost_addFreeDJ_750() {
-//        Event testEvent = new Event(150, "Snacks", "Full Bar", "DJ RC");
-//        assertEquals(6000, testEvent.addCost());
-//    }
-
-
 
 
 }
