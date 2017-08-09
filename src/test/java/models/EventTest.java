@@ -81,4 +81,9 @@ public class EventTest {
         assertEquals(125000, testEvent.createEntertainmentCost());
     }
 
+    @Test
+    public void creteCouponDiscount_ReturnsCostOfEventWith50OffCouponCode_182700() throws Exception {
+        Event testEvent = new Event(150, "Three Course Dinner", "Top Shelf Open Bar", "Weezer");
+        assertEquals(testEvent.addCost(), testEvent.createCouponDiscount("50Off"));
+    }
 }
