@@ -76,10 +76,9 @@ public class EventTest {
     }
 
     @Test
-    public void createEntertainmentCost_CostOf150GuestsPlusAdele_1500() {
+    public void createEntertainmentCost_CostOfWeezerAtEvent_125000() {
         Event testEvent = new Event(150, "Three Course Dinner", "Top Shelf Open Bar", "Weezer");
         assertEquals(125000, testEvent.createEntertainmentCost());
     }
-
 
 }
